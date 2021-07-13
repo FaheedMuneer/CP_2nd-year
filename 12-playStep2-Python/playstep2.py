@@ -35,4 +35,37 @@
 
 def playstep2(hand, dice):
 	# your code goes here
-	pass
+	# a = hand % 10
+	# b = hand % 100
+	# c = b // 10
+	# d = hand // 100
+
+	# e = dice % 10
+	# f = dice % 100
+	# f = f // 10
+	# g = dice // 100
+	# g = g % 10
+	# h = dice // 1000
+	hand = list(str(hand))
+	dice = list(str(dice))
+	if len(dice)>1:
+		if hand[0] == hand[1]:
+			hand[2] == dice[-1]
+			dice = dice[:-1]
+		elif hand[1] == hand[2]:
+			hand[0] = dice[-1]
+			dice = dice[:-1]
+		else:
+			if hand[0] < dice[-1]:
+				hand[1] = hand[0]
+				hand[0] = dice[-1]
+				hand[2] = dice[-2]
+				dice = dice[:-2]
+			else:
+				hand[1] = dice[-1]
+				hand[2] = dice[-2]
+				dice = dice[:-2]
+	hand.sort(reverse = True)
+	hand = int("".join(hand))
+	dice = int("".join(dice))
+	return (hand,dice)
