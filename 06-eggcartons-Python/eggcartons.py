@@ -6,4 +6,5 @@
 
 def fun_eggcartons(eggs):
 	# your code goes here
-	return 1
+	egg = (eggs+11)/12
+	return int(egg)
