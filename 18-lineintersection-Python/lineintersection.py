@@ -4,6 +4,22 @@
 #     y = m2*x + b2
 # This function returns the x value of the point of intersection of the two lines. If the lines are parallel, or identical, the function should return None.
 
+
+def hmm(x,y):
+	if x == 0:
+		return True
+	elif y == 0:
+		return False
+	elif (x%y) == 0:
+		return True
+	else:
+		return False
 def lineintersection(m1, b1, m2, b2):
 	# your code goes here
-	pass
+	if (b1 == b2 or m1 == m2):
+		return None
+	elif (hmm(m1,m2) or hmm(m2,m1)):
+		return None
+	else:
+		return (b2-b1)/(m1-m2)
+	
