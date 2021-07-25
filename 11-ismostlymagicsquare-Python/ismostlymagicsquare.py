@@ -15,4 +15,19 @@
 
 def ismostlymagicsquare(a):
 	# Your code goes here
-	pass
+	x = len(a)
+	if (x == 1):
+		return True
+	s1 = 0
+	s2 = 0
+	for i in range(x):
+		s1 += a[i] [i]
+		s2 += a[i] [x-i-1]
+
+	s_r = 0
+	s_c = 0
+	for i in range(x):
+		for j in range(x):
+			s_r += a[i] [j]
+			s_c += a[j] [i]
+		return (s_r == s_c == s1 == s2)
