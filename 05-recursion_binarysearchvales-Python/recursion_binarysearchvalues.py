@@ -19,5 +19,27 @@
 
 def recursion_binarysearchvalues(L, v):
 	# Your codes goes here
-	pass
+	#extra function which contains main logic
+	def binser(L,S,M,v):
+		if M>=S:
+			mid = S+(M-S)//2
+			if L[mid] == v:
+				k.append((mid,L[mid]))
+			
+			elif L[mid]>v:
+			#recursive call if the value is less than mid
+				k.append((mid,L[mid]))
+				return binser(L,S,mid-1,v)
+			
+			else:
+			#recursive call if the value is greater than mid
+				k.append((mid,L[mid]))
+				return binser(L,mid+1,M,v)
+		return k
+	#creating a list to return the output
+	k =[]
+	#extracting from the list
+	return (binser(L,0,len(L)-1,v))
+
+
 	
