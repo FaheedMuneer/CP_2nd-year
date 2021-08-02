@@ -8,5 +8,31 @@
 # Also the function returns the empty list if the original list is empty. 
 # Remember to not use strings. You may not use loops/iteration in this problem.
 
+def ok(n,s=0):
+	if n == 0:
+		return s
+	else:
+		return ok(n//10,s = s*10 + n%10)
+
+def hmm(n,s=0):
+	if n == 0:
+		return s
+	else:
+		if (n%10)%2 == 0:
+			return hmm(n//10,s = s*10 + n%10)
+		else:
+			return hmm(n//10,s)
+
+def evenL(l,i):
+	if len(l) == i:
+		return l
+	else:
+		a = l[i]
+		l[i] = ok(hmm(a))
+		return evenL(l, i + 1)
 def fun_recursion_onlyevendigits(l): 
-		return []
+		if len(l) == 0:
+			return []
+		else:
+			return evenL(l,0)
+	
