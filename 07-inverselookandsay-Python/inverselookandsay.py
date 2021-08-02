@@ -22,4 +22,15 @@
 
 def inverselookandsay(a):
 	# Your code goes here
-	pass
+	if a ==[]:
+		return []
+	
+	res = []
+	for i in a:
+		if i == ():
+			return []
+		for j in range(i[0]):
+			res.append(i[1])
+	return res
+
+	
