@@ -16,7 +16,30 @@
 
 def topScorer(data):
     # Your code goes here...
-    return ""
+    if data =="":
+        return None
+    
+    a = []
+    b = []
+    z = data.split("\n")
+
+    for i in range(len(z)-1):
+        a.append(z[i].split(','))
+    
+    for i in range(len(a)):
+        b.append(a[i][0])
+        del a[i][0]
+    y = max(a[0])
+    x = max(a[1])
+
+    if y > x:
+        return b[0]
+    elif x > y:
+        return b[1]
+    else:
+        separator = ','
+        f = (str(separator.join(b)))
+        return f
 
 data = '''\
 Fred,10,20,30,40
